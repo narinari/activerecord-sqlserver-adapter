@@ -63,6 +63,15 @@ module ActiveRecord
 
         private
 
+        def _type_cast(value)
+          _quote case value
+          when ActiveRecord::Type::SQLServer::Char::Data
+            value.to_s
+          else
+            super
+          end
+        end
+
         def _quote(value)
           case value
           when Type::Binary::Data

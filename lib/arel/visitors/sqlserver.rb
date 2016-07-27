@@ -204,4 +204,3 @@ module Arel
   end
 end
 
-Arel::Visitors::VISITORS['sqlserver'] = Arel::Visitors::SQLServer
